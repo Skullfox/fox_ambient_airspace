@@ -11,6 +11,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 | fox_ambient_airspace_vehicles      | array with air vehicles | ["C_Heli_Light_01_civil_F","C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F","C_IDAP_Heli_Transport_02_F"]|
 | fox_ambient_airspace_timer      | timer for next spawn      |   900 |
 | fox_ambient_airspace_baseHeight | flyInHeight (_baseHeight * selectRandom [0.6,0.8,1,1.2,1.4] )    | 300
+| fox_ambient_airspace_disabled | disable addon (init.sqf-server only)    | false
 
 ### Inbuild support for:
 * CUP
