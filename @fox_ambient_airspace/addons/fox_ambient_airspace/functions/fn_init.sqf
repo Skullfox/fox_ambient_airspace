@@ -1,6 +1,9 @@
 if (!isServer)  exitwith {
   diag_log format["%1 Only works on server or local",getText(configFile >> "fox_ambient_airspace" >> "warning" )];
 };
+if (missionNamespace getVariable ["fox_ambient_airspace_disabled",false])  exitwith {
+  diag_log format["%1 Addon disabled",getText(configFile >> "fox_ambient_airspace" >> "warning" )];
+};
 
 fox_ambient_airspace_ready = false;
 

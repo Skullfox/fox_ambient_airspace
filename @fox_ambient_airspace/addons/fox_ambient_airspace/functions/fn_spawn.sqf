@@ -57,11 +57,7 @@ _objectCenter = param[1,false];
 _customCode = param[2,[{
   _veh = param[0,objNull];
   _baseHeight = missionNamespace getVariable ["fox_ambient_airspace_baseHeight",getNumber(configFile >> "fox_ambient_airspace" >> "baseHeight" )];
-  if( _veh isKindOf "Plane")then{
-    _veh flyInHeight (_baseHeight * random[0.9,1,1.4] );
-  }else{
-    _veh flyInHeight (_baseHeight * random[0.7,1,1.2] );
-  };
+  _veh flyInHeight (_baseHeight * selectRandom [0.4,0.6,0.8,1,1.2,1.4] );
 },
   {
     _veh = param[0,objNull];
