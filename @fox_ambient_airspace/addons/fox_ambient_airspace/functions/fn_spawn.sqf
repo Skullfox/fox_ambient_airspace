@@ -54,7 +54,15 @@
 
 _vehicleClass = param[0,["C_Plane_Civil_01_F","C_Heli_Light_01_civil_F"]];
 _objectCenter = param[1,false];
-_customCode = param[2,[{},
+_customCode = param[2,[{
+  _veh = param[0,objNull];
+  _baseHeight = missionNamespace getVariable ["fox_ambient_airspace_baseHeight",getNumber(configFile >> "fox_ambient_airspace" >> "baseHeight" )];
+  if( _veh isKindOf "Plane")then{
+    _veh flyInHeight (_baseHeight * random[0.9,1,1.4] );
+  }else{
+    _veh flyInHeight (_baseHeight * random[0.7,1,1.2] );
+  };
+},
   {
     _veh = param[0,objNull];
     {deleteVehicle _x;} forEach crew _veh;
@@ -82,17 +90,6 @@ _endPos = [_pos1,_pos3] - [_startPos];
 
 _veh = createVehicle [_vehicleClass,_startPos, [], 0, "FLY"];
 createVehicleCrew _veh;
-
-
-_baseHeight = missionNamespace getVariable ["fox_ambient_airspace_baseHeight",getNumber(configFile >> "fox_ambient_airspace" >> "baseHeight" )];
-
-if( _veh isKindOf "Plane")then{
-  _veh flyInHeight (_baseHeight * random[0.9,1,1.4] );
-}else{
-  _veh flyInHeight (_baseHeight * random[0.7,1,1.2] );
-};
-
-
 
 _centerRandom = _center getPos [((_center select 0) / 2) * sqrt random 1, random 360];
 _wp1 = (group _veh) addWaypoint [_startPos, 0];
