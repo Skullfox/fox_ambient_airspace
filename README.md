@@ -6,7 +6,7 @@
 | fox_ambient_airspace_timer      | timer for next spawn      |   900 |
 | fox_ambient_airspace_baseHeight |    base fly height,   helis: * random[0.7,1,1.2]   planes: * random[0.9,1,1.4]    | 300
 
-### Inbuild suport for:
+### Inbuild support for:
 * CUP
 * RHS
 * Additional support via addon patch or script
