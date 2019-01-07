@@ -2,6 +2,9 @@ if (!isServer)  exitwith {
   diag_log format["%1 Only works on server or local",getText(configFile >> "fox_ambient_airspace" >> "warning" )];
 };
 
+fox_ambient_airspace_ready = false;
+
+diag_log format["%1 version: %2",getNumber(configfile >> "CfgPatches" >> "fox_ambient_airspace" >> "version" )] ;
 diag_log format["%1 Setup vehicles",getText(configFile >> "fox_ambient_airspace" >> "warning" )] ;
 
 //Check addons and build vehicle array
@@ -31,5 +34,7 @@ if(isClass (configFile >> "CfgPatches" >> "CUP_AirVehicles_Core") )then{
 diag_log format["%1 vehicles loaded: %2",getText(configFile >> "fox_ambient_airspace" >> "warning" ),str _vehicles] ;
 
 missionNamespace setVariable ["fox_ambient_airspace_vehicles",_vehicles];
+
+fox_ambient_airspace_ready = true;
 
 [] call fox_ambient_airspace_fnc_loop;

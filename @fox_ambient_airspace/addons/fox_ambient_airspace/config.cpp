@@ -7,6 +7,8 @@ class CfgPatches {
     requiredVersion = REQUIRED_VERSION;
     requiredAddons[] = {};
 		steamId = 0;
+		url = "https://discordapp.com/invite/bTBUVBB";
+		version  = VERSION;
 	};
 };
 
