@@ -101,5 +101,6 @@ _wp3 = (group _veh) addWaypoint [_endPos select 0, 0];
 _waypointStartCode = _customCode select 0;
 _waypointEndCode = _customCode select 1;
 
+_wp1 setWaypointBehaviour "CARELESS";
 _wp1 setWaypointStatements ["true",  format["[vehicle this] call %1",_waypointStartCode]];
 _wp3 setWaypointStatements ["true",  format["[vehicle this] call %1",_waypointEndCode]];

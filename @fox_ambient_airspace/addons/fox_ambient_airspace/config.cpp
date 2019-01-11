@@ -6,14 +6,15 @@ class CfgPatches {
 		weapons[] = {};
     requiredVersion = REQUIRED_VERSION;
     requiredAddons[] = {};
-		steamId = 0;
+		steamId = 1617724896;
 		url = "https://discordapp.com/invite/bTBUVBB";
 		version  = VERSION;
+		addon = ADDON
 	};
 };
 
 class ADDON{
-	timer = 900;
+	timer = 600;
 	base[] = {"C_Heli_Light_01_civil_F","C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F","C_IDAP_Heli_Transport_02_F"};
   rhs_afrf[] = {"RHS_Mi8amt_civilian"};
   rhs_gref[] = {"rhs_uh1h_idap"};
@@ -25,6 +26,11 @@ class ADDON{
 	baseHeight = 300;
 };
 
+class CfgCommands {
+   allowedHTMLLoadURIs[] += {
+      "https://github.com/Skullfox*"
+   };
+};
 
 class CfgFunctions
 {
